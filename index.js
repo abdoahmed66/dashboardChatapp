@@ -39,7 +39,7 @@ app.use("/api/v1/user",userRouter)
 app.use("/api/v1/password",passwordRouter)
 
 app.all("*",(req,res)=>{
-    return res.status(404).json({status:"fail",message:"this resource is not valid"})
+  return res.status(404).json({status:"error",message:"this resource is not valid"})
 })
 
 server.listen(process.env.PORT,() => console.log(`Server is running on port http://localhost:${process.env.PORT}`))
